@@ -4,24 +4,24 @@
 
 ## Etapa 1
 Considere um arquivo no formato CSV com 1000 valores;
-- [x] Faça:
+- Faça:
   * Crie uma classe em Java que permita ler os arquivos;
   * Nessa classe, faça com que os valores sejam exibidos;
 ----------------------------
 ## Etapa 2
 Considere os seguintes algoritmos de ordenação:
-1. Bubble Sort - [ ]
-2. Insertion sort - [ ]
-3. Selection Sort - [ ]
-4. Quick Sort - [ ]
-5. Merge Sort - [ ]
+- [x] Bubble Sort
+- [x] Insertion sort
+- [x] Selection Sort
+- [ ] Quick Sort
+- [ ] Merge Sort
 
-- [ ] Faça:
+- Faça:
   * Implemente uma classe que receba o índice do algoritmo a ser gerado via passagem de parâmetro pelo programa;
   * A lista CSV destinada ao grupo deverá ser ordenada pelos algoritmos;
   * Ao final da execução, apresente o tempo de execução do programa e a lista ordenada deve ser gravada em disco (formato csv);
 
-- [ ] Análise:
+- Análise:
   * Execute o programa 5 vezes para da algoritmo;
   * Calcula a média de execução dos algoritmos;
   * Ordene a lista para o pior caso possível e refaça as simulações calculando as médias;
