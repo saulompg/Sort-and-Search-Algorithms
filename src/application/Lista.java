@@ -1,7 +1,8 @@
 package application;
 
-// IMPORTAÇÕES
 import java.util.ArrayList;
+
+// IMPORTAÇÕES
 
 // CLASSE LISTA DINÂMICA
 public class Lista {
@@ -81,6 +82,7 @@ public class Lista {
 //	BUBBLE SORT
 	public void bubbleSort() {
 		
+		System.out.println("LISTA ORDENADA PELO MÉTODO BUBBLE SORT");
 		Sort.bubble(arr);
 		
 	}
@@ -88,6 +90,7 @@ public class Lista {
 //	INSERTION SORT
 	public void insertionSort() {
 		
+		System.out.println("LISTA ORDENADA PELO MÉTODO INSERTION SORT");
 		Sort.insertion(arr);
 		
 	}
@@ -95,6 +98,7 @@ public class Lista {
 //	SELECTION SORT
 	public void selectionSort() {
 		
+		System.out.println("LISTA ORDENADA PELO MÉTODO SELECTION SORT");
 		Sort.selection(arr);
 		
 	}
@@ -102,6 +106,7 @@ public class Lista {
 //	QUICK SORT
 	public void quickSort() {
 		
+		System.out.println("LISTA ORDENADA PELO MÉTODO QUICK SORT");
 		Sort.quick(arr);
 		
 	}
@@ -109,6 +114,7 @@ public class Lista {
 //	MERGE SORT
 	public void mergeSort() {
 		
+		System.out.println("LISTA ORDENADA PELO MÉTODO MERGE SORT");
 		Sort.merge(arr);
 		
 	}
