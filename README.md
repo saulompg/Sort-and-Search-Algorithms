@@ -5,8 +5,8 @@
 ## Etapa 1
 Considere um arquivo no formato CSV com 1000 valores;
 Faça:
-- [ ] Crie uma classe em Java que permita ler os arquivos;
-- [ ] Nessa classe, faça com que os valores sejam exibidos;
+- [x] Crie uma classe em Java que permita ler os arquivos;
+- [x] Nessa classe, faça com que os valores sejam exibidos;
 
 ## Etapa 2
 Considere os seguintes algoritmos de ordenação:
@@ -17,9 +17,9 @@ Considere os seguintes algoritmos de ordenação:
 5- Merge Sort
 
 Faça:
-- [ ] Implemente uma classe que receba o índice do algoritmo a ser gerado via passagem de parâmetro pelo programa;
+- [x] Implemente uma classe que receba o índice do algoritmo a ser gerado via passagem de parâmetro pelo programa;
 - [ ] A lista CSV destinada ao grupo deverá ser ordenada pelos algoritmos;
-- [ ] Ao final da execução, apresente o tempo de execução do programa e a lista ordenada deve ser gravada em disco (formato csv);
+- [x] Ao final da execução, apresente o tempo de execução do programa e a lista ordenada deve ser gravada em disco (formato csv);
 
 Análise:
 - [ ] Execute o programa 5 vezes para da algoritmo;
