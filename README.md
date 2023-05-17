@@ -10,11 +10,11 @@ Faça:
 
 ## Etapa 2
 Considere os seguintes algoritmos de ordenação:
-1- Bubble Sort
-2- Insertion sort
-3- Selection Sort
-4- Quick Sort
-5- Merge Sort
+1. Bubble Sort
+2. Insertion sort
+3. Selection Sort
+4. Quick Sort
+5. Merge Sort
 
 Faça:
 - [x] Implemente uma classe que receba o índice do algoritmo a ser gerado via passagem de parâmetro pelo programa;
