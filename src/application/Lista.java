@@ -1,31 +1,30 @@
 package application;
 
-import java.util.ArrayList;
-
 // IMPORTAÇÕES
+import java.util.ArrayList;
 
 // CLASSE LISTA DINÂMICA
 public class Lista {
 
-//	ATRIBUTOS
+	// ATRIBUTOS
 	private ArrayList<Integer> arr = new ArrayList<Integer>();
 	
-//	MÉTODOS DA LISTA
-//	VERIFICA SE A LISTA ESTÁ VAZIA
+	// MÉTODOS DA LISTA
+	// VERIFICA SE A LISTA ESTÁ VAZIA
 	public boolean isEmpty() {
 		
 		return arr.size() == 0;
 		
 	}
 	
-//	ADICIONA ELEMENTO AO FINAL DA LISTA
+	// ADICIONA ELEMENTO AO FINAL DA LISTA
 	public void push(int element) {
 		
 		arr.add(element);
 		
 	}
 	
-//	REMOVE O ULTIMO ELEMENTO DA LISTA
+	// REMOVE O ULTIMO ELEMENTO DA LISTA
 	public Integer pop() {
 		
 		Integer element = null;
@@ -41,14 +40,14 @@ public class Lista {
 		
 	}
 	
-//	ADICIONA ELEMENTO AO INICIO DA LISTA
+	// ADICIONA ELEMENTO AO INICIO DA LISTA
 	public void add(Integer element) {
 		
 		arr.add(0, element);
 		
 	}
 	
-//	REMOVE O PRIMEIRO ELEMENTO DA LISTA
+	// REMOVE O PRIMEIRO ELEMENTO DA LISTA
 	public Integer remove() {
 		
 		Integer element = null;
@@ -64,58 +63,56 @@ public class Lista {
 		
 	}
 	
-//	EXIBE OS ELEMENTOS DA LISTA
+	// EXIBE OS ELEMENTOS DA LISTA
 	public void print() {
 		
 		if(!isEmpty())
-			
 			for(int i = 0; i < arr.size(); i++)
 				System.out.printf("[%d] \t-->\t[%s]\n", i, arr.get(i).toString());
 		
 		else
-			
 			System.err.println("A lista está vazia");
 		
 	}
 	
-//	MÉTODOS DE ORDENAÇÃO
-//	BUBBLE SORT
-	public void bubbleSort() {
-		
-		System.out.println("LISTA ORDENADA PELO MÉTODO BUBBLE SORT");
+	// MÉTODOS DE ORDENAÇÃO
+	// BUBBLE SORT
+	public String bubbleSort() {
+
 		Sort.bubble(arr);
+		return "BUBBLE SORT";
 		
 	}
 	
-//	INSERTION SORT
-	public void insertionSort() {
+	// INSERTION SORT
+	public String insertionSort() {
 		
-		System.out.println("LISTA ORDENADA PELO MÉTODO INSERTION SORT");
 		Sort.insertion(arr);
+		return "INSERTION SORT";
 		
 	}
 	
-//	SELECTION SORT
-	public void selectionSort() {
+	// SELECTION SORT
+	public String selectionSort() {
 		
-		System.out.println("LISTA ORDENADA PELO MÉTODO SELECTION SORT");
 		Sort.selection(arr);
+		return "SELECTION SORT";
 		
 	}
 	
-//	QUICK SORT
-	public void quickSort() {
+	// QUICK SORT
+	public String quickSort() {
 		
-		System.out.println("LISTA ORDENADA PELO MÉTODO QUICK SORT");
-		Sort.quick(arr);
+		Sort.quick(arr, 0, arr.size() - 1);
+		return "QUICK SORT";
 		
 	}
 	
-//	MERGE SORT
-	public void mergeSort() {
+	// MERGE SORT
+	public String mergeSort() {
 		
-		System.out.println("LISTA ORDENADA PELO MÉTODO MERGE SORT");
-		Sort.merge(arr);
+		Sort.merge(arr, 0, arr.size() - 1);
+		return "MERGE SORT";
 		
 	}
 	
