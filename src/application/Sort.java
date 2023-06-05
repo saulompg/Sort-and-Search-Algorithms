@@ -120,10 +120,71 @@ public class Sort {
     
     
 	//	ORDENAR LISTA COM O MERGE SORT
-	public static void merge(ArrayList<Integer> arr, int low, int high) {
+	// Método principal do Merge Sort para ordenar o ArrayList
+    public static void mergeSort(ArrayList<Integer> arranjo, int esquerda, int direita) {
+        if (esquerda < direita) {
+            // Calcula o ponto médio do intervalo
+            int meio = esquerda + (direita - esquerda) / 2;
+            
+            // Recursivamente ordena a metade esquerda do arranjo
+            mergeSort(arranjo, esquerda, meio);
+            
+            // Recursivamente ordena a metade direita do arranjo
+            mergeSort(arranjo, meio + 1, direita);
+            
+            // Combina as duas metades ordenadas
+            merge(arranjo, esquerda, meio, direita);
+        }
+    }
 
-		//  corpo do código
-		
-	}
+    // Método para combinar duas metades ordenadas
+    public static void merge(ArrayList<Integer> arranjo, int esquerda, int meio, int direita) {
+        // Calcula o tamanho de cada metade
+        int n1 = meio - esquerda + 1;
+        int n2 = direita - meio;
+
+        // Cria arranjos temporários para armazenar as duas metades
+        ArrayList<Integer> arranjoEsquerda = new ArrayList<>();
+        ArrayList<Integer> arranjoDireita = new ArrayList<>();
+
+        // Copia os elementos da metade esquerda do arranjo para o arranjoEsquerda
+        for (int i = 0; i < n1; i++) {
+            arranjoEsquerda.add(arranjo.get(esquerda + i));
+        }
+        
+        // Copia os elementos da metade direita do arranjo para o arranjoDireita
+        for (int i = 0; i < n2; i++) {
+            arranjoDireita.add(arranjo.get(meio + 1 + i));
+        }
+
+        // Indices para percorrer as duas metades e o arranjo original
+        int i = 0, j = 0, k = esquerda;
+        
+        // Combina os elementos das duas metades em ordem crescente
+        while (i < n1 && j < n2) {
+            if (arranjoEsquerda.get(i) <= arranjoDireita.get(j)) {
+                arranjo.set(k, arranjoEsquerda.get(i));
+                i++;
+            } else {
+                arranjo.set(k, arranjoDireita.get(j));
+                j++;
+            }
+            k++;
+        }
+
+        // Copia os elementos restantes da metade esquerda, se houver
+        while (i < n1) {
+            arranjo.set(k, arranjoEsquerda.get(i));
+            i++;
+            k++;
+        }
+
+        // Copia os elementos restantes da metade direita, se houver
+        while (j < n2) {
+            arranjo.set(k, arranjoDireita.get(j));
+            j++;
+            k++;
+        }
+    }
 	
 }

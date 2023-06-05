@@ -111,7 +111,7 @@ public class Lista {
 	// MERGE SORT
 	public String mergeSort() {
 		
-		Sort.merge(arr, 0, arr.size() - 1);
+		Sort.mergeSort(arr, 0, arr.size() - 1);
 		return "MERGE SORT";
 		
 	}
