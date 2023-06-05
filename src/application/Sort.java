@@ -111,80 +111,130 @@ public class Sort {
 		
 	}
 	
-	//	ORDENAR LISTA COM O QUICK SORT
-	public static void quick(ArrayList<Integer> arr, int low, int high) {
+	// ORDENAR LISTA COM O QUICK SORT
+	public static void quick(ArrayList<Integer> arr, int start, int end) {
 		
-		// corpo do código
+		if (start < end) {
+
+            // Encontra o índice do pivô e realiza a partição do array
+            int pivotIndex = particionar(arr, start, end);       
+            // Chama o quickSort para a sublista à esquerda do pivô
+            quick(arr, start, pivotIndex - 1);
+            // Chama o quickSort para a sublista à direita do pivô
+            quick(arr, pivotIndex + 1, end);
+
+        }
 		
 	}
-    
-    
-	//	ORDENAR LISTA COM O MERGE SORT
-	// Método principal do Merge Sort para ordenar o ArrayList
-    public static void mergeSort(ArrayList<Integer> arranjo, int esquerda, int direita) {
-        if (esquerda < direita) {
-            // Calcula o ponto médio do intervalo
-            int meio = esquerda + (direita - esquerda) / 2;
-            
-            // Recursivamente ordena a metade esquerda do arranjo
-            mergeSort(arranjo, esquerda, meio);
-            
-            // Recursivamente ordena a metade direita do arranjo
-            mergeSort(arranjo, meio + 1, direita);
-            
-            // Combina as duas metades ordenadas
-            merge(arranjo, esquerda, meio, direita);
-        }
-    }
+	
+	// Método que encontra o índice do pivô e realiza a partição do array
+    private static int particionar(ArrayList<Integer> arr, int start, int end) {
+        
+    	int pivot = arr.get(end); // Define o último elemento como pivô
+        int i = start - 1; // Índice do menor elemento
+        
+        for (int j = start; j < end; j++) {
 
-    // Método para combinar duas metades ordenadas
-    public static void merge(ArrayList<Integer> arranjo, int esquerda, int meio, int direita) {
-        // Calcula o tamanho de cada metade
-        int n1 = meio - esquerda + 1;
-        int n2 = direita - meio;
+            // Se o elemento atual é menor ou igual ao pivô
+            if (arr.get(j) <= pivot) {
 
-        // Cria arranjos temporários para armazenar as duas metades
-        ArrayList<Integer> arranjoEsquerda = new ArrayList<>();
-        ArrayList<Integer> arranjoDireita = new ArrayList<>();
+                i++; // Incrementa o índice do menor elemento
+                // Troca o elemento atual com o elemento na posição i
+                int temp = arr.get(i);
+                arr.set(i, arr.get(j));
+                arr.set(j, temp);
 
-        // Copia os elementos da metade esquerda do arranjo para o arranjoEsquerda
-        for (int i = 0; i < n1; i++) {
-            arranjoEsquerda.add(arranjo.get(esquerda + i));
+            }
+
         }
         
-        // Copia os elementos da metade direita do arranjo para o arranjoDireita
-        for (int i = 0; i < n2; i++) {
-            arranjoDireita.add(arranjo.get(meio + 1 + i));
-        }
+        // Troca o pivô com o elemento na posição i+1
+        int temp = arr.get(i+1);
+        arr.set(i+1, arr.get(end));
+        arr.set(end, temp);
+        
+        return i+1; // Retorna o índice do pivô
 
-        // Indices para percorrer as duas metades e o arranjo original
-        int i = 0, j = 0, k = esquerda;
+    }
+    
+	// ORDENAR LISTA COM O MERGE SORT
+    // Método principal do Merge Sort para ordenar o arranjo
+	public static void merge(ArrayList<Integer> arr, int start, int end) {
+
+		if (start < end) {
+
+            int middle = start + (end - start) / 2; // Encontra o meio do array    
+            // Recursivamente ordena a sublista à esquerda do arranjo
+            merge(arr, start, middle);     
+            // Recursivamente ordena a sublista à direita do arranjo
+            merge(arr, middle + 1, end);
+            // Combina as duas sublistas ordenadas
+            mergeArr(arr, start, middle, end);
+
+        }
+		
+	}
+	
+    // Método que combina duas sublistas ordenadas em um único array
+    private static void mergeArr(ArrayList<Integer> arr, int start, int middle, int end) {
+        
+    	int n1 = middle - start + 1; // Tamanho da sublista à esquerda do meio
+        int n2 = end - middle; // Tamanho da sublista à direita do meio
+        
+        // Cria dois arrays temporários para armazenar as sublistas
+        ArrayList<Integer> leftArr = new ArrayList<>();
+        ArrayList<Integer> rightArr = new ArrayList<>();
+        
+        // Copia os elementos das sublistas para os arrays temporários
+        for (int i = 0; i < n1; i++)
+            leftArr.add(arr.get(start + i));
+        for (int j = 0; j < n2; j++)
+            rightArr.add(arr.get(middle + 1 + j));
+        
+        // Merge dos dois arrays temporários de volta para o array original
+        int i = 0; // Índice do array da sublista à esquerda
+        int j = 0; // Índice do array da sublista à direita
+        int k = start; // Índice do array original
         
         // Combina os elementos das duas metades em ordem crescente
         while (i < n1 && j < n2) {
-            if (arranjoEsquerda.get(i) <= arranjoDireita.get(j)) {
-                arranjo.set(k, arranjoEsquerda.get(i));
-                i++;
-            } else {
-                arranjo.set(k, arranjoDireita.get(j));
-                j++;
-            }
-            k++;
-        }
 
-        // Copia os elementos restantes da metade esquerda, se houver
+            if (leftArr.get(i) <= rightArr.get(j)) {
+
+                // Se o elemento da sublista à esquerda é menor ou igual ao da sublista à direita
+                arr.set(k, leftArr.get(i)); // Copia o elemento para o array original
+                i++; // Incrementa o índice da sublista à esquerda
+
+            } else {
+
+                // Se o elemento da sublista à direita é menor que o da sublista à esquerda
+                arr.set(k, rightArr.get(j)); // Copia o elemento para o array original
+                j++; // Incrementa o índice da sublista à direita
+
+            }
+
+            k++; // Incrementa o índice do array original
+
+        }
+        
+        // Copia o restante dos elementos da sublista à esquerda, se houver
         while (i < n1) {
-            arranjo.set(k, arranjoEsquerda.get(i));
+
+            arr.set(k, leftArr.get(i));
             i++;
             k++;
-        }
 
-        // Copia os elementos restantes da metade direita, se houver
+        }
+        
+        // Copia o restante dos elementos da sublista à direita, se houver
         while (j < n2) {
-            arranjo.set(k, arranjoDireita.get(j));
+
+            arr.set(k, rightArr.get(j));
             j++;
             k++;
+
         }
+
     }
 	
 }
