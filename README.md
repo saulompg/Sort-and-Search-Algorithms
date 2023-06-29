@@ -4,9 +4,9 @@
 
 ## Etapa 1
 Considere um arquivo no formato CSV com 1000 valores;
-- Faça:
-  * Crie uma classe em Java que permita ler os arquivos;
-  * Nessa classe, faça com que os valores sejam exibidos;
+Implementação:
+* Crie uma classe em Java que permita ler os arquivos;
+* Nessa classe, faça com que os valores sejam exibidos;
 ----------------------------
 ## Etapa 2
 Considere os seguintes algoritmos de ordenação:
@@ -16,16 +16,15 @@ Considere os seguintes algoritmos de ordenação:
 4. Quick Sort
 5. Merge Sort
 
-- Faça:
-  * Implemente uma classe que receba o índice do algoritmo a ser gerado via passagem de parâmetro pelo programa;
-  * A lista CSV destinada ao grupo deverá ser ordenada pelos algoritmos;
-  * Ao final da execução, apresente o tempo de execução do programa e a lista ordenada deve ser gravada em disco (formato csv);
-
-- Análise:
-  * Execute o programa 5 vezes para da algoritmo;
-  * Calcula a média de execução dos algoritmos;
-  * Ordene a lista para o pior caso possível e refaça as simulações calculando as médias;
-  * Apresente um relatório com a execução do programa com a lista no formato original e no pior caso.
+Implementação:
+* Implemente uma classe que receba o índice do algoritmo a ser gerado via passagem de parâmetro pelo programa;
+* A lista CSV destinada ao grupo deverá ser ordenada pelos algoritmos;
+* Ao final da execução, apresente o tempo de execução do programa e a lista ordenada deve ser gravada em disco (formato csv);
+Análise:
+* Execute o programa 5 vezes para da algoritmo;
+* Calcula a média de execução dos algoritmos;
+* Em um segundo momento, ordene a lista para o pior caso possível e refaça as simulações calculando as médias;
+* Apresente um relatório com a execução do programa com a lista no formato original e no pior caso.
 
 > obs: No relatório deve constar uma explicação de como cada algoritmo funciona, sendo aplicado a um conjunto de 5 valores. Envie junto ao relatório, uma lista ordenada por cada método.
 --------------------------
@@ -34,11 +33,12 @@ A partir do conjunto de dados, implemente um algoritmo que faça a importação 
 1. Árvore binária
 2. Lista
 
-Calcule o tempo de execução da busca do:
-* Menor valor do conjunto de dados
-* Maior valor do conjunto de dados
-
-Repita a operação cinco vezes e calcule a média. Apresente as conclusões sobre os tempos de busca em uma lista e em uma árvore binária.
-Em um segundo momento, ordene os valores e os insira novamente dentro de uma árvore binária e uma lista.
-
-Faça novamente as medições calculando a média. Análise os resultados apresentados comentando se ocorreu ou não diferença. Caso venha a ocorrer diferença, qual a justificativa para essa alteração?
+Objetivo:
+- Calcular o tempo de execução da busca do:
+  * Menor valor do conjunto de dados
+  * Maior valor do conjunto de dados
+Análise:
+* Repita a operação cinco vezes e calcule a média para cada estrutura de dados.
+* Apresente as conclusões sobre os tempos de busca em uma lista e em uma árvore binária.
+* Em um segundo momento, ordene os valores, insira-os nas estruturas de dados e repita os testes.
+* Apresente um relatório com os resultados obtidos, comentando se ocorreu ou não diferença. Caso venha a ocorrer diferença, qual a justificativa para essa alteração?
