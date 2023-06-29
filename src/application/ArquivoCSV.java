@@ -9,7 +9,7 @@ import java.io.IOException;
 
 // CLASSE PARA LEITURA DO ARQUIVO CSV
 public class ArquivoCSV {
-	// MÉTODO PARA LEITURA DO ARQUIVO CSV
+	// MÉTODO PARA LEITURA DO ARQUIVO CSV - LISTA
 	static void read(String sourceFile, List list) {
 		// INSTANCIA AS CLASSES USADAS PARA LEITURA DO ARQUIVO CSV
 		// A CLASSE FileReader É USADA PARA LER DADOS DE UM ARQUIVO DE TEXTO
@@ -30,7 +30,7 @@ public class ArquivoCSV {
 		}
 	}
 	
-	// MÉTODO PARA LEITURA DO ARQUIVO CSV
+	// MÉTODO PARA LEITURA DO ARQUIVO CSV - LISTA/ÁRVORE
 	static void read(String sourceFile, List list, BinaryTree tree) {
 		// INSTANCIA AS CLASSES USADAS PARA LEITURA DO ARQUIVO CSV
 		// A CLASSE FileReader É USADA PARA LER DADOS DE UM ARQUIVO DE TEXTO

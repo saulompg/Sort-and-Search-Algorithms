@@ -50,7 +50,7 @@ public class List {
 	
 	// EXIBE OS ELEMENTOS DA LISTA
 	public void print() {
-		if(isEmpty())
+		if(!isEmpty())
 			for(int i = 0; i < arr.size(); i++)
 				System.out.printf("[%d] \t-->\t[%s]\n", i, arr.get(i).toString());
 		else
@@ -60,40 +60,36 @@ public class List {
 	// MÉTODOS DE BUSCA
 	// PROCURA UM DETERMINADO ELEMENTO NA LISTA
 	public boolean search(Integer element) {		
-		if(isEmpty())
-			return false;
-		
-		for(int i = 0; i < arr.size(); i++)
-			if(element == arr.get(i))
-				return true;				
+		if(!isEmpty())
+			for(int i = 0; i < arr.size(); i++)
+				if(element == arr.get(i))
+					return true;				
 		
 		return false;
 	}
 	
 	// PROCURA O MENOR ELEMENTO DA LISTA
 	public Integer min() {
-		if(!isEmpty()) {
-			int element = arr.get(0);
-			for(int i = 0; i < arr.size(); i++)	
-				if(arr.get(i) < element)
-					element = arr.get(i);
-			return element;
-		}
+		if(isEmpty())
+			return null;
 		
-		return null;
+		int element = arr.get(0);
+		for(int i = 0; i < arr.size(); i++)	
+			if(arr.get(i) < element)
+				element = arr.get(i);
+		return element;
 	}
 	
 	// PROCURA O MAIOR ELEMENTO DA LISTA
 	public Integer max() {
-		if(!isEmpty()) {
-			int element = arr.get(0);
-			for(int i = 0; i < arr.size(); i++)	
-				if(arr.get(i) > element)
-					element = arr.get(i);
-			return element;
-		}
-		
-		return null;
+		if(isEmpty())
+			return null;
+			
+		int element = arr.get(0);
+		for(int i = 0; i < arr.size(); i++)	
+			if(arr.get(i) > element)
+				element = arr.get(i);
+		return element;
 	}
 	
 	// MÉTODOS DE ORDENAÇÃO

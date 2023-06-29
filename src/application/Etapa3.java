@@ -7,7 +7,7 @@ public class Etapa3 {
 	public static void main(String[] args) {
 				
 		// DEFININDO O CAMINHO DO ARQUIVO CSV DE ENTRADA
-		String sourceFile = "src/data/lista_original.csv";
+		String sourceFile = "src/data/lista_ordenada.csv";
 		
 		// INICIALIZANDO LISTA E ÁRVORE PARA ARMAZENAR OS DADOS DO ARQUIVO CSV
 		List list = new List();
@@ -60,6 +60,7 @@ public class Etapa3 {
 			// REGISTRA O TEMPO DO TERMINO
 	        long finish = System.nanoTime();
 			
+	        
 	        // OUTPUT
 	        // INDICA O MÉTODO ESCOLHIDO
 	        System.out.printf("%s \n", method);
