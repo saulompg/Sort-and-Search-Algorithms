@@ -20,6 +20,7 @@ Implementação:
 * Implemente uma classe que receba o índice do algoritmo a ser gerado via passagem de parâmetro pelo programa;
 * A lista CSV destinada ao grupo deverá ser ordenada pelos algoritmos;
 * Ao final da execução, apresente o tempo de execução do programa e a lista ordenada deve ser gravada em disco (formato csv);
+
 Análise:
 * Execute o programa 5 vezes para da algoritmo;
 * Calcula a média de execução dos algoritmos;
@@ -37,6 +38,7 @@ Objetivo:
 - Calcular o tempo de execução da busca do:
   * Menor valor do conjunto de dados
   * Maior valor do conjunto de dados
+
 Análise:
 * Repita a operação cinco vezes e calcule a média para cada estrutura de dados.
 * Apresente as conclusões sobre os tempos de busca em uma lista e em uma árvore binária.
