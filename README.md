@@ -1,6 +1,5 @@
-# data-structure-project
-
-> Projeto da disciplina de Estrutura de Dados e Algorítimos
+# Sort-and-Search-Algorithms
+> Projeto da disciplina de Estrutura de Dados e Algorítimos - Implementando algoritmos de ordenação e métodos de busca
 
 ## Etapa 1
 Objetivo:
